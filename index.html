@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>متجري لعرض منتجاتي</title>
+<meta name="theme-color" content="#07070d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%235cf2c2'/%3E%3C/svg%3E">
+<meta name="description" content="متجر لعرض المنتجات مع سلة وطلب عبر واتساب">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5cf2c2"/><stop offset="1" stop-color="#9b8bff"/></linearGradient></defs></svg>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<header class="top">
+  <a class="brand" href="#"><span class="dot"></span><span id="brand"></span></a>
+  <div class="search"><input id="q" type="search" placeholder="ابحث عن منتج..." aria-label="بحث"></div>
+  <button class="cartbtn" id="openCart" aria-label="السلة"><svg viewBox="0 0 64 64" class="cic"><path d="M8 12h8l6 30h28l6-22H18"/><circle cx="26" cy="52" r="4"/><circle cx="46" cy="52" r="4"/></svg><b id="count">0</b></button>
+</header>
+
+<section class="hero">
+  <div class="copy">
+    <span class="pill"><i></i>مجموعة جديدة وصلت</span>
+    <h1 id="tagline"></h1>
+    <p>تصفّح مجموعة مختارة بعناية، أضف ما يعجبك إلى السلة، وأرسل طلبك عبر واتساب في خطوة واحدة.</p>
+    <div class="cta"><a class="btn" href="#shop">تسوّق الآن</a><span class="feat">شحن سريع · ضمان الجودة</span></div>
+  </div>
+  <div class="stage" id="stage" aria-hidden="true"></div>
+</section>
+
+<section class="feats"><div><span class="ic"><svg viewBox="0 0 64 64"><path d="M6 18h30v22H6zM36 26h12l8 8v6H36z"/><circle cx="18" cy="44" r="4"/><circle cx="46" cy="44" r="4"/></svg></span><p><b>شحن سريع</b><span>يصلك طلبك خلال أيام قليلة</span></p></div><div><span class="ic"><svg viewBox="0 0 64 64"><path d="M32 8l20 8v14c0 12-8 20-20 26-12-6-20-14-20-26V16z"/><path d="M23 32l6 6 12-12"/></svg></span><p><b>ضمان الجودة</b><span>منتجات مفحوصة وقابلة للاستبدال</span></p></div><div><span class="ic"><svg viewBox="0 0 64 64"><path d="M10 14h44v30H28l-12 10V44h-6z"/><path d="M22 26h20M22 34h12"/></svg></span><p><b>دعم مباشر</b><span>نرد عليك عبر واتساب بسرعة</span></p></div></section>
+<main id="shop">
+  <div class="bar">
+    <div class="chips" id="chips"></div>
+    <select id="sort" aria-label="ترتيب">
+      <option value="def">الترتيب الافتراضي</option>
+      <option value="lo">السعر: الأقل أولاً</option>
+      <option value="hi">السعر: الأعلى أولاً</option>
+      <option value="rate">الأعلى تقييماً</option>
+      <option value="fav">المفضلة فقط</option>
+    </select>
+  </div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer><div class="big" id="foot"></div><a class="btn" id="fwa" target="_blank" rel="noopener">تواصل معنا عبر واتساب</a><small>صُنع بحب · جميع الحقوق محفوظة</small></footer>
+
+<a class="wa" id="wa" target="_blank" rel="noopener" aria-label="واتساب"><svg viewBox="0 0 64 64"><path d="M10 54l4-12a22 22 0 118 8z"/><path d="M24 26c0 8 8 16 16 16l4-4-6-4-3 2c-3-1-6-4-7-7l2-3-4-6z"/></svg></a>
+<dialog id="modal"></dialog>
+<div class="veil" id="veil"></div>
+<aside class="drawer" id="drawer" aria-label="السلة">
+  <div class="dh"><h2>سلتك</h2><button class="x2" id="closeCart" aria-label="إغلاق">✕</button></div>
+  <div class="items" id="items"></div>
+  <div class="df"><div class="tot"><span>الإجمالي</span><b id="total"></b></div><button class="btn wide" id="checkout">إرسال الطلب عبر واتساب</button></div>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="firebase-config.js"></script>
+<script src="products.js"></script>
+<script src="firebase-adapter.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
